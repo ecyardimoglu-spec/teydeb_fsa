@@ -4,7 +4,7 @@ import numpy as np
 
 # Page Configuration
 st.set_page_config(
-    page_title="TEYDEB YZ Tabanlı FSA & Patent Risk Analiz Platformu",
+    page_title="TEYDEB YZ Tabanlı FSA & Patent Analiz Platformu",
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -74,7 +74,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "🎯 1. Proje Ayrıştırması & Sorgu",
     "🛡️ 2. İstem (Claim) Çakışma & Risk",
     "🌍 3. Hukuki Durum & Pazar Analizi",
-    "💡 4. Design-Around & Aksiyonlar",
+    "💡 4. Tasarım & Aksiyonlar",
     "📄 5. Raporlama"
 ])
 
@@ -140,7 +140,7 @@ with tab2:
             "Patent Sahibi": "AgroTech Inc. (ABD / TR Validasyonu Var)",
             "Hukuki Durum": "Aktif / Yürürlükte (In Force)",
             "Çakışma Skoru": 85,
-            "Risk Seviyesi": "Kırmızı Flag 🚩",
+            "Risk Seviyesi": "Kırmızı 🚩",
             "Çakışan İstem (Claim) Metni": "İstem 1: Tarımsal arazide otonom uçuş yapan bir İHA, arazi üzerindeki spektral kameradan alınan görüntüleri kenar bilişim modülünde işleyen bir görüntü işleme birimi ve bu birimden gelen tespitle orantılı olarak açılıp kapanan değişken debili püskürtme valfi içeren ilaçlama sistemi.",
             "Proje Eşleşme Analizi": "Projenizdeki 'Kenar Bilişimli Püskürtme Kontrolü' ve 'Değişken Debili Nozul' bileşeni, bu patentin 1. Bağımsız İstemi ile %100 birebir çakışmaktadır."
         },
@@ -150,7 +150,7 @@ with tab2:
             "Patent Sahibi": "Global Smart Farming Technologies AG",
             "Hukuki Durum": "Başvuru Aşamasında (Pending)",
             "Çakışma Skoru": 62,
-            "Risk Seviyesi": "Sarı Flag ⚠️",
+            "Risk Seviyesi": "Sarı  ⚠️",
             "Çakışan İstem (Claim) Metni": "Claim 1: A method for agricultural field treatment comprising: capturing multispectral images, detecting fungal infections using a Convolutional Neural Network (CNN), and triggering a micro-dosage valve system.",
             "Proje Eşleşme Analizi": "Yöntem istemi projedeki yazılım akışıyla örtüşmektedir. Ancak patent henüz tescil edilmediği için istem genişliği değişebilir."
         },
@@ -160,16 +160,16 @@ with tab2:
             "Patent Sahibi": "DroneAgro Corp.",
             "Hukuki Durum": "Süresi Dolmuş / Terk (Expired)",
             "Çakışma Skoru": 15,
-            "Risk Seviyesi": "Yeşil Flag 🟢",
+            "Risk Seviyesi": "Yeşil 🟢",
             "Çakışan İstem (Claim) Metni": "Claim 1: A modular UAV frame with quick-release pesticide tank attachment mechanism.",
             "Proje Eşleşme Analizi": "Mekanik modül benzerliği var ancak patent süresi dolduğu için kamuya mal olmuştur (Tekniğin Bilinen Durumu)."
         }
     ]
 
     for p in patent_claims:
-        if p["Risk Seviyesi"] == "Kırmızı Flag 🚩":
+        if p["Risk Seviyesi"] == "Kırmızı 🚩":
             card_class = "card-red"
-        elif p["Risk Seviyesi"] == "Sarı Flag ⚠️":
+        elif p["Risk Seviyesi"] == "Sarı  ⚠️":
             card_class = "card-yellow"
         else:
             card_class = "card-green"
